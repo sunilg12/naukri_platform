@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Recruiter Invitation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            color: #333;
+            padding: 20px;
+        }
+        .container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #007bff;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 12px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>You are invited to join as a recruiter</h1>
+
+    <p th:text="'Hello, ' + ${recruiterName} + '!'">Hello, Recruiter!</p>
+
+    <p>
+        <strong th:text="${companyName}">ABC Corp</strong> is inviting you to join the Naukri Platform as a recruiter.
+    </p>
+
+    <p>
+        To accept the request, please accept the invitation and complete the onboarding process.
+    </p>
+
+    <form th:action="@{${acceptLink}}" method="get">
+        <button type="submit" class="button">Accept Invitation</button>
+    </form>
+
+    <p class="footer">
+        If you did not expect this invitation, you can safely ignore this email.
+    </p>
+</div>
+</body>
+</html>

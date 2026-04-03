@@ -1,1 +1,0 @@
-# naukri_platform
